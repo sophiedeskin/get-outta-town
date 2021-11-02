@@ -9,6 +9,7 @@ import './home.css';
 function Home() {
   const { data } = useQuery(QUERY_TRIPS);
   const trips = data?.trips || [];
+  console.log(trips);
   return (
     <main>
     <div className ="flex justify-center pt-6">
@@ -23,6 +24,7 @@ function Home() {
   </button>
 </div>
     </div>
+    <br/>
         <div
         className=""
       >

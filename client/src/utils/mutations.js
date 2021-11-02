@@ -23,6 +23,29 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
     }
 }`;
 
+export const ADD_TRIP = gql`
+  mutation addTrip($tripCountry: String!, $tripCity: String!, 
+    $tripDesc: String!, $tripAuthor: String!, $tripDuration: String!) 
+  {
+    addTrip(tripCountry: $tripCountry, tripCity: $tripCity, tripDesc: $tripDesc,
+      tripAuthor: $tripAuthor, tripDuration: $tripDuration) 
+      {
+      _id
+      tripCountry
+      tripCountry
+      tripDesc
+      tripAuthor
+      tripDuration
+      createdAt
+      comments {
+        _id
+        commentText
+      }
+    }
+  }
+`;
+
+
 export const ADD_COMMENT = gql`
   mutation addComment(
     $tripId: ID!
