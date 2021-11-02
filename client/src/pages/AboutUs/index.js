@@ -28,7 +28,7 @@ export default function AboutUs() {
               <div className="container">
                 <h2>Keith Whitman</h2>
                 <p className="title">Fullstack WebDev</p>
-                <p>Web developer based in Central Phoenix,AZ.</p>
+                <p>Web developer based in Phoenix,AZ.</p>
                
               </div>
             </div>
