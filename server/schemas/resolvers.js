@@ -12,7 +12,7 @@ const resolvers = {
     },
     trips: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Thought.find(params).sort({ createdAt: -1 });
+      return Trip.find(params).sort({ createdAt: -1 });
     },
     trip: async (parent, { tripId }) => {
       return Trip.findOne({ _id: tripId });
