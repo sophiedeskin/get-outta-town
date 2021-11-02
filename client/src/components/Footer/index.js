@@ -13,10 +13,10 @@ export default function index() {
               <a href="https://github.com/sophiedeskin" target="_blank"><i className="fab fa-github"></i></a>
             </button>
             <button className="bg-white text-gray-700 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <a href="https://github.com/sophiedeskin" target="_blank"><i className="fab fa-github"></i></a>
+            <a href="https://github.com/Giselle556" target="_blank"><i className="fab fa-github"></i></a>
             </button>
             <button className="bg-white text-gray-700 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <a href="https://github.com/sophiedeskin" target="_blank"><i className="fab fa-github"></i></a>
+            <a href="https://github.com/Nephrim" target="_blank"><i className="fab fa-github"></i></a>
             </button>
                
               </div>
