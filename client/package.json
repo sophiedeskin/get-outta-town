@@ -18,13 +18,12 @@
     "graphql": "^15.4.0",
     "axios": "^0.24.0",
     "emailjs-com": "^3.2.0"
-
   },
   "scripts": {
     "start": "craco start",
-     "build": "craco build",
-     "react-build": "react-scripts build",
-     "test": "craco test",
+    "build": "craco build",
+    "react-build": "react-scripts build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
