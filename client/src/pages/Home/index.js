@@ -1,9 +1,16 @@
 import React from 'react';
+import { useQuery } from '@apollo/client';
+import Trip from '../../components/Trip';
+
+import { QUERY_TRIPS } from '../../utils/queries';
 
 import './home.css';
 
 function Home() {
+  const { data } = useQuery(QUERY_TRIPS);
+  const trips = data?.trips || [];
   return (
+    <main>
     <div className ="flex justify-center pt-6">
 <div className="w-96 h-10 pl-3 pr-2 bg-white border rounded-full flex">
   <input className="search" name="search" id="search" placeholder="Search"
@@ -16,6 +23,14 @@ function Home() {
   </button>
 </div>
     </div>
+        <div
+        className=""
+      >
+        <Trip 
+        trips={trips}/>
+      </div>
+      </main>
+    
   );
 }
 
