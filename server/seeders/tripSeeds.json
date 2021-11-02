@@ -1,0 +1,43 @@
+[
+    {
+      "tripCountry": "Mexico",
+      "tripCity": "Cancun",
+      "tripDuration": "16 days",
+      "tripDesc": "Beach time with the family",
+      "tripAuthor": "Brian Kernighan"
+    },
+    {
+        "tripCountry": "England",
+        "tripCity": "London",
+        "tripDuration": "5 days",
+        "tripDesc": "See big ben",
+        "tripAuthor": "Max Kanat-Alexander"
+      },
+      {
+        "tripCountry": "Canada",
+        "tripCity": "Toronto",
+        "tripDuration": "2 days",
+        "tripDesc": "Yay Canada",
+        "tripAuthor": "Why The Lucky Stiff"
+      },
+      {
+        "tripCountry": "US",
+        "tripCity": "Nashville",
+        "tripDuration": "3 days",
+        "tripDesc": "See MusicCity",
+        "tripAuthor": "Kent Beck"
+      },
+      {
+        "tripCountry": "US",
+        "tripCity": "Miami",
+        "tripDuration": "4 days",
+        "tripDesc": "Party Party Party!",
+        "tripAuthor": "Edward V. Berard"
+      },
+      {
+        "tripCountry": "Argentina",
+        "tripCity": "Buenos Aires",
+        "tripDuration": "7 days",
+        "tripDesc": "Eat typical food",
+        "tripAuthor": "Alan Kay"
+      }]
