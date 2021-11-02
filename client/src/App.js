@@ -15,6 +15,7 @@ import AddTrip from './pages/AddTrip';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Trip from './components/Trip';
+import AboutUs from './pages/AboutUs';
 import Dashboard from './pages/Dashboard';
 
 // Construct our main GraphQL API endpoint
@@ -70,6 +71,9 @@ function App() {
           </Route>
           <Route exact path="/addtrip">
             <AddTrip />
+          </Route>
+          <Route exact path="/aboutus">
+            <AboutUs />
           </Route>
         </div>
         <Footer/>
