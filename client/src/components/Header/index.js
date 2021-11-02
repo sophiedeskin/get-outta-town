@@ -34,7 +34,7 @@ export default function Header() {
               <Link className="font-GT-Pressura-Regular text-xl pr-8 text-center text-white hover:text-blue-400" to="/">
                 Home
               </Link>
-              <Link className="font-GT-Pressura-Regular text-xl pr-8 text-center text-white hover:text-blue-400" to="/mytrips">View Your Trips</Link>
+              <Link className="font-GT-Pressura-Regular text-xl pr-8 text-center text-white hover:text-blue-400" to="/dashboard">View Your Trips</Link>
               <Link className="font-GT-Pressura-Regular text-xl pr-8 text-center text-white hover:text-blue-400" to="/contact">
                 Contact Us
               </Link>
