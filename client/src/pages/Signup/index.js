@@ -47,9 +47,9 @@ export default function Signup() {
             <div className="bg-grey-lighter pt-40">
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
             <div className="">
-                <form className="bg-white p-16 rounded shadow-md text-black w-full" onSubmit={handleFormSubmit}>
 
                     <h2 className="mb-8 text-3xl text-center">Sign up</h2>
+                <form className="bg-white p-16 rounded shadow-md text-black w-full" onSubmit={handleFormSubmit}>
                     <input 
                         type="text"
                         class="block border border-grey-light w-full p-3 rounded mb-4"

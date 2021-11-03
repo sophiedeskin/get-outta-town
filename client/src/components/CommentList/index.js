@@ -2,7 +2,7 @@ import React from 'react';
 
 const CommentList = ({ comments = [] }) => {
   if (!comments.length) {
-    return <h3>No Comments Yet</h3>;
+    return <h3 class="flex justify-center text-lg">No Comments Yet</h3>;
   }
 
     return (
@@ -17,7 +17,7 @@ const CommentList = ({ comments = [] }) => {
       </div>
       
       
-      <p style="width: 90%" class="text-gray-600 text-lg text-center md:text-left ">{comment.commentText}</p>
+      <p class="width: 90%" class="text-gray-600 text-lg text-center md:text-left ">{comment.commentText}</p>
       
       </div>
         </div>
