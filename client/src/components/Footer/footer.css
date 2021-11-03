@@ -1,7 +1,6 @@
 .footer {
     display: flex;
     justify-content: center;
-
 }
 button:hover {
     opacity: 75%;
