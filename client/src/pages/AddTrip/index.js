@@ -17,6 +17,7 @@ export default function AddTrip() {
     tripCity: "",
     tripDuration: "",
     tripDesc: "",
+    tripImg: "",
   });
 
   const [characterCount, setCharacterCount] = useState(0);
@@ -42,9 +43,10 @@ export default function AddTrip() {
     try {
       const { data } = await addTrip({
         variables: {
-          ...formState.Auth.getProfile().data.username,
+          ...formState, 
         },
       });
+      console.log(formState)
 
       setFormState("");
     } catch (err) {
@@ -124,6 +126,22 @@ export default function AddTrip() {
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
             <div class="grid grid-cols-1">
               <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
+                Link to an Image that describes your trip
+              </label>
+              <div className="block mb-2 text-sm text-gray-600">Image must end in PNG or JPG</div>
+              <textarea
+                class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                value={formState.tripImg}
+                name="tripImg"
+                onChange={handleChange}
+                type="text"
+                placeholder="Input 2"
+              />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
+            <div class="grid grid-cols-1">
+              <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
                 Duration
               </label>
 
@@ -136,6 +154,7 @@ export default function AddTrip() {
                 placeholder="Input 2"
               />
             </div>
+  
           </div>
           {/* <div class="grid grid-cols-1 mt-5 mx-7">
       <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Selection</label>
@@ -160,7 +179,7 @@ export default function AddTrip() {
     </div> */}
 
           <div class="flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5">
-            <button class="w-auto bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full">
+            <button className="w-auto bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full">
               Create
             </button>
 

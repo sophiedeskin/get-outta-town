@@ -14,8 +14,8 @@ const typeDefs = gql`
     tripCountry: String
     tripCity:String
     tripDesc: String
-    tripAuthor: String
     tripDuration: String
+    tripImg: String
     createdAt: String
     comments: [Comment]!
   }
@@ -35,7 +35,8 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
-    user(username: String!): User
+    user(userId: ID!): User
+
     trips(username: String): [Trip]
     trip(tripId: ID!): Trip
   }
@@ -43,14 +44,14 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addTrip(tripCountry: String!, tripCity: String!, tripDuration: String!, tripDesc: String!, tripAuthor: String!): Trip
+    addTrip(userId: ID!, tripCountry: String!, tripCity: String!, tripDuration: String!, tripDesc: String!, tripImg: String!): User
     addComment(
       tripId: ID!
       commentText: String!
       commentAuthor: String!
-    ): Trip
-    removeTrip(tripId: ID!): Trip
-    removeComment(tripId: ID!, commentId: ID!): Trip
+    ): User
+    removeTrip(tripId: ID!): User
+    removeComment(tripId: ID!, commentId: ID!): User
   }
 `;
 

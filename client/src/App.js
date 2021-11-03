@@ -18,6 +18,8 @@ import Trip from './components/Trip';
 import AboutUs from './pages/AboutUs';
 import Dashboard from './pages/Dashboard';
 import SingleTrip from './pages/SingleTrip';
+import SearchActivities from './pages/SearchActivities';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -75,6 +77,9 @@ function App() {
           </Route>
           <Route exact path="/aboutus">
             <AboutUs />
+          </Route>
+          <Route exact path="/searchactivities">
+            <SearchActivities />
           </Route>
           <Route exact path="/trips/:tripId">
               <SingleTrip />

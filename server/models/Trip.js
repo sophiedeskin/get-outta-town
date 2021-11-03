@@ -30,9 +30,11 @@ const tripSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
-  tripAuthor: {
+  tripImg: {
     type: String,
-    required: true,
+    required: 'You need to leave a image link!',
+    minlength: 1,
+    maxlength: 280,
     trim: true,
   },
   createdAt: {

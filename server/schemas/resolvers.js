@@ -1,15 +1,23 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Trip } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Trip } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('trips');
+      return User.find();
     },
-    user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('trips');
+
+    user: async (parent, { userId }) => {
+      return User.findOne({ _id: userId });
     },
+
+    // users: async () => {
+    //   return User.find().populate('trips');
+    // },
+    // user: async (parent, { username }) => {
+    //   return User.findOne({ username }).populate('trips');
+    // },
     trips: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Trip.find(params).sort({ createdAt: -1 });
@@ -18,11 +26,11 @@ const resolvers = {
       return Trip.findOne({ _id: tripId });
     },
     me: async (parent, args, context) => {
-        if (context.user) {
-          return User.findOne({ _id: context.user._id }).select('-__v -password');
-        }
-        throw new AuthenticationError('You need to be logged in!');
-      },
+      if (context.user) {
+        return User.findOne({ _id: context.user._id }).select("-__v -password");
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 
   Mutation: {
@@ -35,29 +43,44 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('No user found with this email address');
+        throw new AuthenticationError("No user found with this email address");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
 
       return { token, user };
     },
-    addTrip: async (parent, { params }) => {
-      const Trip = await Trip.create({ params });
+    addTrip: async (
+      parent,
+      { tripCountry, tripCity, tripDuration, tripDesc, tripImg },
+      context
+    ) => {
+      // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
+      if (context.user) {
+        const trip = await Trip.create({
+            tripCountrys: tripCountry,
+            tripCitys: tripCity,
+            tripDurations: tripDuration,
+            tripDesc: tripDesc,
+            tripImgs: tripImg,
+          });
+          await User.findOneAndUpdate(
+            { _id: context.user._id },
+            { $addToSet: { trips: trip._id } }
+          );
+  
+          return trip;
+        }
+        throw new AuthenticationError('You need to be logged in!');
+      },
 
-      await User.findOneAndUpdate(
-        { username: tripAuthor },
-        { $addToSet: { trips: trip._id } }
-      );
 
-      return trip;
-    },
     addComment: async (parent, { tripId, commentText, commentAuthor }) => {
       return Trip.findOneAndUpdate(
         { _id: tripId },
@@ -70,9 +93,17 @@ const resolvers = {
         }
       );
     },
-    removeTrip: async (parent, { tripId }) => {
-      return Trip.findOneAndDelete({ _id: tripId });
+    removeTrip: async (parent, { trip }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { trips: trip } },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
+
     removeComment: async (parent, { tripId, commentId }) => {
       return Trip.findOneAndUpdate(
         { _id: tripId },
