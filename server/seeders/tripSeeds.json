@@ -4,40 +4,40 @@
       "tripCity": "Cancun",
       "tripDuration": "16 days",
       "tripDesc": "Beach time with the family",
-      "tripAuthor": "Brian Kernighan"
+      "tripImg": "https://cdn.pixabay.com/photo/2020/12/17/04/09/guanajuato-5838206_960_720.jpg"
     },
     {
         "tripCountry": "England",
         "tripCity": "London",
         "tripDuration": "5 days",
         "tripDesc": "See big ben",
-        "tripAuthor": "Max Kanat-Alexander"
+        "tripImg": "https://cdn.pixabay.com/photo/2014/11/13/23/34/palace-530055_960_720.jpg"
       },
       {
         "tripCountry": "Canada",
         "tripCity": "Toronto",
         "tripDuration": "2 days",
         "tripDesc": "Yay Canada",
-        "tripAuthor": "Why The Lucky Stiff"
+        "tripImg": "https://cdn.pixabay.com/photo/2021/08/14/04/15/mountains-6544522_960_720.jpg"
       },
       {
         "tripCountry": "US",
         "tripCity": "Nashville",
         "tripDuration": "3 days",
         "tripDesc": "See MusicCity",
-        "tripAuthor": "Kent Beck"
+        "tripImg": "https://cdn.pixabay.com/photo/2021/10/19/17/51/road-6724201_960_720.jpg"
       },
       {
         "tripCountry": "US",
         "tripCity": "Miami",
         "tripDuration": "4 days",
         "tripDesc": "Party Party Party!",
-        "tripAuthor": "Edward V. Berard"
+        "tripImg": "https://img.jakpost.net/c/2017/01/26/2017_01_26_20163_1485417604._large.jpg"
       },
       {
         "tripCountry": "Argentina",
         "tripCity": "Buenos Aires",
         "tripDuration": "7 days",
         "tripDesc": "Eat typical food",
-        "tripAuthor": "Alan Kay"
+        "tripImg": "https://cdn.pixabay.com/photo/2017/04/12/18/50/mount-fitzroy-2225382_960_720.jpg"
       }]
