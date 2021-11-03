@@ -52,6 +52,24 @@ export const ADD_TRIP = gql`
     }
   }
 `;
+export const REMOVE_TRIP = gql`
+mutation removeTrip($tripId: ID!, $trip: String!) {
+  removeTrip(trip: $trip) {
+      _id
+      username
+      email
+      trips {
+        tripCountry
+        tripCity
+        tripDesc
+        tripDuration
+        createdAt
+        tripImg
+      }
+  }
+}
+`;
+
 
 export const ADD_COMMENT = gql`
   mutation addComment(

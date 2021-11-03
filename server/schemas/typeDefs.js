@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    trips: [Trip]!
+    trips: [Trip]
   }
 
   type Trip {
@@ -17,7 +17,8 @@ const typeDefs = gql`
     tripDuration: String
     tripImg: String
     createdAt: String
-    comments: [Comment]!
+    comments: [Comment]
+    username: [User]!
   }
 
   type Comment {
@@ -35,7 +36,7 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
-    user(userId: ID!): User
+    user(userId: ID): User
 
     trips(username: String): [Trip]
     trip(tripId: ID!): Trip
