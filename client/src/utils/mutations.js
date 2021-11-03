@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -7,31 +7,39 @@ export const LOGIN_USER = gql`
       user {
         _id
         username
-}
+      }
     }
   }
 `;
 
 export const ADD_USER = gql`
-mutation addUser($username: String!, $email: String!, $password: String!) {
+  mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
-    token
-        user {
-            _id
-            username
-        }
+      token
+      user {
+        _id
+        username
+      }
     }
-}`;
+  }
+`;
 
 export const ADD_TRIP = gql`
-  mutation addTrip($userId: ID!, $tripCountry: String!, $tripCity: String!, 
-    $tripDesc: String!, $tripDuration: String!, $tripImg: String!) 
-  {
-    addTrip(userId: $userId, tripCountry: $tripCountry, tripCity: $tripCity, tripDesc: $tripDesc,
-    tripDuration: $tripDuration, tripImg: $tripImg) 
-      {
+  mutation addTrip(
+    $tripCountry: String!
+    $tripCity: String!
+    $tripDesc: String!
+    $tripDuration: String!
+    $tripImg: String!
+  ) {
+    addTrip(
+      tripCountry: $tripCountry
+      tripCity: $tripCity
+      tripDesc: $tripDesc
+      tripDuration: $tripDuration
+      tripImg: $tripImg
+    ) {
       _id
-      tripCountry
       tripCountry
       tripDesc
       tripDuration
@@ -44,7 +52,6 @@ export const ADD_TRIP = gql`
     }
   }
 `;
-
 
 export const ADD_COMMENT = gql`
   mutation addComment(
