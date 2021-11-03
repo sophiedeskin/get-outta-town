@@ -42,6 +42,12 @@ const tripSchema = new Schema({
     default: Date.now,
     // get: (timestamp) => dateFormat(timestamp),
   },
+  users:
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  
   comments: [
     {
       commentText: {

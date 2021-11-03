@@ -58,20 +58,21 @@ const resolvers = {
     },
     addTrip: async (
       parent,
-      { tripCountry, tripCity, tripDuration, tripDesc, tripImg },
+      { userID, tripCountry, tripCity, tripDuration, tripDesc, tripImg },
       context
     ) => {
       // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
+      console.log(context.user)
       if (context.user) {
         const trip = await Trip.create({
             tripCountrys: tripCountry,
             tripCitys: tripCity,
             tripDurations: tripDuration,
-            tripDesc: tripDesc,
+            tripDescs: tripDesc,
             tripImgs: tripImg,
           });
           await User.findOneAndUpdate(
-            { _id: context.user._id },
+            { _id: context.userID },
             { $addToSet: { trips: trip._id } }
           );
   
