@@ -58,28 +58,27 @@ const resolvers = {
     },
     addTrip: async (
       parent,
-      { tripCountry, tripCity, tripDuration, tripDesc, tripImg },
+      { userID, tripCountry, tripCity, tripDuration, tripDesc, tripImg },
       context
     ) => {
       // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
       if (context.user) {
         const trip = await Trip.create({
-            tripCountrys: tripCountry,
-            tripCitys: tripCity,
-            tripDurations: tripDuration,
-            tripDesc: tripDesc,
-            tripImgs: tripImg,
-          });
-          await User.findOneAndUpdate(
-            { _id: context.user._id },
-            { $addToSet: { trips: trip._id } }
-          );
-  
-          return trip;
-        }
-        throw new AuthenticationError('You need to be logged in!');
-      },
+          tripCountry: tripCountry,
+          tripCity: tripCity,
+          tripDuration: tripDuration,
+          tripDesc: tripDesc,
+          tripImg: tripImg,
+        });
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { trips: trip._id } }
+        );
 
+        return trip;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
 
     addComment: async (parent, { tripId, commentText, commentAuthor }) => {
       return Trip.findOneAndUpdate(
