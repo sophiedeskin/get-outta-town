@@ -17,12 +17,15 @@ export default function Trip({ trips }) {
    <div className="sm:w-1/2 md:w-1/3 mb-4 px-2" >
      <div className="relative bg-white rounded border">
        <picture className="block bg-gray-200 border-b">
-         <img className="block" src="https://picsum.photos/id/29/2106/1404" alt="Card 1"/>
+         <img className="block" 
+        //  src="https://picsum.photos/id/29/2106/1404" 
+         src={trip.tripImg} 
+         alt="Card 1"/>
        </picture>
        <div className="p-4">
          <h3 className="text-lg font-bold">
            <a className="stretched-link" href="#" title="Card 1">
-           {trip.tripAuthor}
+           {trip.tripCountry}
            </a>
          </h3>
          <time className="block mb-2 text-sm text-gray-600" datetime="2019-01-01">{trip.tripDuration}</time>

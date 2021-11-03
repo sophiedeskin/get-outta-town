@@ -8,6 +8,7 @@ import CommentList from '../../components/CommentList';
 import CommentForm from '../../components/CommentForm';
 
 import { QUERY_SINGLE_TRIP } from '../../utils/queries';
+import { QUERY_ME } from '../../utils/queries';
 
 const SingleTrip = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
@@ -23,6 +24,7 @@ const SingleTrip = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+  
   return (
 
 
@@ -34,15 +36,15 @@ const SingleTrip = () => {
    <div className="sm:w-1/2 md:w-1/3 mb-4 px-2" >
      <div className="relative bg-white rounded border">
        <picture className="block bg-gray-200 border-b">
-         <img className="block" src="https://picsum.photos/id/29/2106/1404" alt="Card 1"/>
+         <img className="block" src={trip.tripImg} alt="Card 1"/>
        </picture>
        <div className="p-4">
          <h3 className="text-lg font-bold">
            <a className="stretched-link" href="#" title="Card 1">
-           {trip.tripAuthor}
+           {trip.tripCountry}
            </a>
          </h3>
-         <time className="block mb-2 text-sm text-gray-600" datetime="2019-01-01">{trip.tripDuration}</time>
+         <div className="block mb-2 text-sm text-gray-600">{trip.tripDuration}</div>
          <p>
          {trip.tripDesc}
          </p>
