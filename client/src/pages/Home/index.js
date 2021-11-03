@@ -2,6 +2,8 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import Trip from '../../components/Trip';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 
 import { QUERY_TRIPS } from '../../utils/queries';
 
@@ -11,12 +13,26 @@ function Home() {
   const { data } = useQuery(QUERY_TRIPS);
   const trips = data?.trips || [];
   // console.log(trips);
+  const submit=() => {
+    console.log("hello");
+    axios.post('http://localhost:3001/query', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      data:{
+        foo: "bar"
+      }
+    });
+  };
+  
   return (
     <main>
     <div className ="flex justify-center pt-6">
 <div className="w-96 h-10 pl-3 pr-2 bg-white border-blue-500 border-4 rounded-full flex ">
   <input className="search" name="search" id="search" placeholder="Search for activities"
-         className="appearance-none w-full outline-none focus:outline-none active:outline-none"/>
+         className="appearance-none w-full outline-none focus:outline-none active:outline-none"/> 
+  <button onClick={submit}>button</button>
   <Link 
   type="submit" 
     to={`/searchactivities/`}
