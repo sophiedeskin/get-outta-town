@@ -6,7 +6,7 @@ export default function index() {
         <footer className="relative bg-blueGray-200 pt-12 pb-0">
         <div className="items-center justify-center align-center text-gray-700">
          
-            <div className="w-full bg-blue-200 p-12">
+            <div className="w-full bg-blue-200 p-8">
               <div className="items-center justify-center footer">
               
               <button className="bg-white text-gray-700 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
