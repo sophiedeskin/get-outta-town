@@ -14,6 +14,11 @@ export const QUERY_USER = gql`
         tripDuration
         createdAt
         tripImg
+        comments {
+          _id
+          commentText
+          createdAt
+        }
         activities {
           _id
           activityTitle
@@ -46,13 +51,7 @@ export const QUERY_TRIPS = gql`
       tripDuration
       createdAt
       tripImg
-      activities {
-        _id
-        activityTitle
-        activityLink
-        activityImg
-        activityReview
-      }
+
     }
   }
 `;

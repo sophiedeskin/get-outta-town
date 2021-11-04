@@ -109,15 +109,29 @@ const resolvers = {
     }
     throw new AuthenticationError("You need to be logged in!");
     },
-    removeTrip: async (parent, { tripId }) => {
-      // if (context.user) {
-        return User.findOneAndUpdate(
-          // { _id: context.user._id },
-          { _id: tripId },
-          { $pull: { trips: trip._id } },
-          { new: true }
-        );
+    removeTrip: async (parent, { tripId }, context) => {
+        // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
+        if (context.user) {
+          const trip = await Trip.destroy({
+            _id: tripId
+          });
+          await User.findOneAndUpdate(
+            { _id: context.user._id },
+            { $pull: { trips: trip._id } }
+          );
+        }
+        throw new AuthenticationError("You need to be logged in!");
       },
+      
+      
+    //   context) => {
+    //   if (context.user) {
+    //     const trip = await User.findOneAndUpdate(
+    //       { _id: tripId },
+    //       { $pull: { trips: trip._id } },
+    //       { new: true }
+    //     );
+    //   }
     //   throw new AuthenticationError("You need to be logged in!");
     // },
 

@@ -197,19 +197,19 @@ export default function AddTrip() {
 
           <div class="flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5">
 
-            <Link 
+            <button 
             className="w-auto bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full"
             type="submit"
-            to={`/dashboard`}
+            // to={`/dashboard`}
             >
               
               Create
-            </Link>
+            </button>
 
             <Link
               className="w-auto bg-gray-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full"
               type="submit"
-              // to={`/dashboard`}
+              to={`/dashboard`}
               // class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
             >
               Cancel

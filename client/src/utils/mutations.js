@@ -48,6 +48,13 @@ export const ADD_TRIP = gql`
       tripDuration
       tripImg
       createdAt
+      activities {
+        _id
+        activityTitle
+        activityLink
+        activityImg
+        activityReview
+      }
       comments {
         _id
         commentText
@@ -58,7 +65,7 @@ export const ADD_TRIP = gql`
 `;
 export const REMOVE_TRIP = gql`
 mutation removeTrip($tripId: ID!, $trip: String!) {
-  removeTrip( userId: $userId, trip: $trip ) {
+  removeTrip( tripId: $tripId, trip: $trip ) {
     _id
     username
     email
@@ -70,6 +77,13 @@ mutation removeTrip($tripId: ID!, $trip: String!) {
       tripDuration
       tripImg
       createdAt
+      activities {
+        _id
+        activityTitle
+        activityLink
+        activityImg
+        activityReview
+      }
       comments {
         _id
         commentText
