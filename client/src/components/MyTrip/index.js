@@ -5,6 +5,7 @@ import { QUERY_USER } from '../../utils/queries';
 import { useMutation } from '@apollo/client';
 import Activities from '../../components/Activities';
 import CommentList from '../../components/CommentList';
+import { useQuery } from '@apollo/client';
 
 export default function MyTrip({ trips }) {
     const [removeTrip, { error }] = useMutation(REMOVE_TRIP, {

@@ -13,6 +13,7 @@ export default function AddTrip() {
   // const [tripDesc, setTripDesc] = useState('');
 
   const [formState, setFormState] = useState({
+    tripTitle: "",
     tripCountry: "",
     tripCity: "",
     tripDuration: "",
@@ -76,6 +77,22 @@ export default function AddTrip() {
         </div>
 
         <form onSubmit={handleFormSubmit}>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
+            <div class="grid grid-cols-1">
+              <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
+                Title
+              </label>
+
+              <textarea
+                class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                value={formState.tripTitle}
+                name="tripTitle"
+                onChange={handleChange}
+                type="text"
+                placeholder="Input 2"
+              />
+            </div>
+          </div>
           <div class="grid grid-cols-1 mt-5 mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
               Trip Description
@@ -179,14 +196,20 @@ export default function AddTrip() {
     </div> */}
 
           <div class="flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5">
-            <button className="w-auto bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full">
+
+            <Link 
+            className="w-auto bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full"
+            type="submit"
+            to={`/dashboard`}
+            >
+              
               Create
-            </button>
+            </Link>
 
             <Link
               className="w-auto bg-gray-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full"
               type="submit"
-              to={`/dashboard`}
+              // to={`/dashboard`}
               // class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
             >
               Cancel

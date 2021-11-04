@@ -8,6 +8,7 @@ const resolvers = {
       return User.find().populate('trips');
     },
     user: async (parent, args ,context) => {
+      console.log(context.user)
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate('trips');
       }
@@ -53,12 +54,13 @@ const resolvers = {
     },
     addTrip: async (
       parent,
-      { userID, tripCountry, tripCity, tripDuration, tripDesc, tripImg },
+      { userID, tripTitle, tripCountry, tripCity, tripDuration, tripDesc, tripImg },
       context
     ) => {
       // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
       if (context.user) {
         const trip = await Trip.create({
+          tripTitle: tripTitle,
           tripCountry: tripCountry,
           tripCity: tripCity,
           tripDuration: tripDuration,
@@ -75,28 +77,49 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
 
-    addComment: async (parent, { tripId, commentText, commentAuthor }) => {
+    addComment: async (parent, { tripId, commentText }, context) => {
+      if (context.user) {
       return Trip.findOneAndUpdate(
         { _id: tripId },
         {
-          $addToSet: { comments: { commentText, commentAuthor } },
+          $addToSet: { comments: { commentText } },
         },
         {
           new: true,
           runValidators: true,
         }
       );
+      
+    }
+    throw new AuthenticationError("You need to be logged in!");
     },
-    removeTrip: async (parent, { trip }, context) => {
+    addActivity: async (parent, { tripId, activityTitle, activityLink, activityImg, activityReview }, context) => {
       if (context.user) {
+      return Trip.findOneAndUpdate(
+        { _id: tripId },
+        {
+          $addToSet: { activities: { activityTitle, activityLink, activityImg, activityReview } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+      
+    }
+    throw new AuthenticationError("You need to be logged in!");
+    },
+    removeTrip: async (parent, { tripId }) => {
+      // if (context.user) {
         return User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { trips: trip } },
+          // { _id: context.user._id },
+          { _id: tripId },
+          { $pull: { trips: trip._id } },
           { new: true }
         );
-      }
-      throw new AuthenticationError("You need to be logged in!");
-    },
+      },
+    //   throw new AuthenticationError("You need to be logged in!");
+    // },
 
     removeComment: async (parent, { tripId, commentId }) => {
       return Trip.findOneAndUpdate(

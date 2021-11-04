@@ -1,5 +1,6 @@
 [
     {
+      "tripTitle": "Fun in the Sun",
       "tripCountry": "Mexico",
       "tripCity": "Cancun",
       "tripDuration": "16 days",
@@ -7,6 +8,7 @@
       "tripImg": "https://cdn.pixabay.com/photo/2020/12/17/04/09/guanajuato-5838206_960_720.jpg"
     },
     {
+      "tripTitle": "London Here We Come",
         "tripCountry": "England",
         "tripCity": "London",
         "tripDuration": "5 days",
@@ -14,6 +16,7 @@
         "tripImg": "https://cdn.pixabay.com/photo/2014/11/13/23/34/palace-530055_960_720.jpg"
       },
       {
+        "tripTitle": "Toronto Here We Come",
         "tripCountry": "Canada",
         "tripCity": "Toronto",
         "tripDuration": "2 days",
@@ -21,6 +24,7 @@
         "tripImg": "https://cdn.pixabay.com/photo/2021/08/14/04/15/mountains-6544522_960_720.jpg"
       },
       {
+        "tripTitle": "Musical Getaway",
         "tripCountry": "US",
         "tripCity": "Nashville",
         "tripDuration": "3 days",
@@ -28,6 +32,7 @@
         "tripImg": "https://cdn.pixabay.com/photo/2021/10/19/17/51/road-6724201_960_720.jpg"
       },
       {
+        "tripTitle": "Party in Miami",
         "tripCountry": "US",
         "tripCity": "Miami",
         "tripDuration": "4 days",
@@ -35,6 +40,7 @@
         "tripImg": "https://img.jakpost.net/c/2017/01/26/2017_01_26_20163_1485417604._large.jpg"
       },
       {
+        "tripTitle": "Food Tour of Argentina",
         "tripCountry": "Argentina",
         "tripCity": "Buenos Aires",
         "tripDuration": "7 days",

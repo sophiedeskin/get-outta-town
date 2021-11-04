@@ -19,7 +19,6 @@ const CommentForm = ({ tripId }) => {
         variables: {
           tripId,
           commentText,
-          commentAuthor: Auth.getProfile().data.username,
         },
       });
 
@@ -69,7 +68,7 @@ id="comment_content"
 spellcheck="false">
 
 </textarea>
-<button class="font-bold py-2 px-4 w-full bg-purple-400 text-lg text-white shadow-md rounded-lg ">Comment </button>
+<a class="flex justify-center font-bold py-2 px-4 w-1/4 bg-blue-600 hover:bg-blue-700 text-lg text-white rounded-lg " id="commentbutton">Comment </a>
 </form>
 </section>
 </>

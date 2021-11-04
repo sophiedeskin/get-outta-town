@@ -8,12 +8,12 @@ db.once('open', async () => {
     await Trip.deleteMany({});
     await User.deleteMany({});
 
-    await User.create(userSeeds);
-
+    
     for (let i = 0; i < tripSeeds.length; i++) {
-      const { _id, tripAuthor } = await Trip.create(tripSeeds[i]);
+      const { _id } = await Trip.create(tripSeeds[i]);
+      await User.create(userSeeds);
       const user = await User.findOneAndUpdate(
-        { username: tripAuthor },
+        { _id: _id },
         {
           $addToSet: {
             trips: _id,

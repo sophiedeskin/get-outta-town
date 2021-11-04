@@ -8,14 +8,22 @@ export const QUERY_USER = gql`
       email
       trips {
         tripCountry
+        tripTitle
         tripCity
         tripDesc
         tripDuration
         createdAt
         tripImg
-      }
+        activities {
+          _id
+          activityTitle
+          activityLink
+          activityImg
+          activityReview
+        }
       }
     }
+  }
 `;
 export const QUERY_ALL_USERS = gql`
   query allUsers {
@@ -27,25 +35,24 @@ export const QUERY_ALL_USERS = gql`
     }
   }
 `;
-export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      username
-      trips
-    }
-  }
-`;
 export const QUERY_TRIPS = gql`
   query getTrips {
     trips {
       _id
+      tripTitle
       tripCountry
       tripCity
       tripDesc
       tripDuration
       createdAt
       tripImg
+      activities {
+        _id
+        activityTitle
+        activityLink
+        activityImg
+        activityReview
+      }
     }
   }
 `;
@@ -55,6 +62,7 @@ export const QUERY_SINGLE_TRIP = gql`
     trip(tripId: $tripId){
       _id
       tripCountry
+      tripTitle
       tripCity
       tripDesc
       tripDuration
@@ -64,6 +72,13 @@ export const QUERY_SINGLE_TRIP = gql`
         _id
         commentText
         createdAt
+      }
+      activities {
+        _id
+        activityTitle
+        activityLink
+        activityImg
+        activityReview
       }
     }
   }
