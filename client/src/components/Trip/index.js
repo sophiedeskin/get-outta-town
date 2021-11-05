@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 export default function Trip({ trips }) {
 
-  if (!trips.length) {
-    return <h3 className="flex justify-center pt-6 text-lg">No Trips Yet</h3>;
-  }
+  // if (!trips.length) {
+  //   return <h3 className="flex justify-center pt-6 text-lg">No Trips Yet</h3>;
+  // }
 
     return (
  
@@ -26,9 +26,9 @@ export default function Trip({ trips }) {
        </picture>
        <div className="p-4">
          <h3 className="text-lg font-bold">
-           <a className="stretched-link" href="#" title="Card 1">
+           <p className="stretched-link" title="Card 1">
            {trip.tripTitle}
-           </a>
+           </p>
          </h3>
          <time className="block mb-2 text-sm text-gray-600" datetime="2019-01-01">{trip.tripDuration}</time>
          <p>
