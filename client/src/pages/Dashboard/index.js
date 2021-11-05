@@ -10,7 +10,9 @@ function MyTrips() {
     const { data } = useQuery(QUERY_USER);
     const trips = data?.user.trips || [];
     console.log(data)
-
+    if (!trips.length) {
+      return <h3 className="flex justify-center pt-6 text-lg">No Trips Yet</h3>;
+    }
     
     return (
       <div className="">
