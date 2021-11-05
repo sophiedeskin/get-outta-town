@@ -5,11 +5,8 @@ import { QUERY_USER } from '../../utils/queries';
 import { useMutation } from '@apollo/client';
 import Activities from '../../components/Activities';
 import CommentList from '../../components/CommentList';
-import { useQuery } from '@apollo/client';
 
 export default function MyTrip({ trips }) {
-
-
     const [removeTrip, { error }] = useMutation(REMOVE_TRIP, {
         update(cache, { data: { removeTrip } }) {
           try {
@@ -39,13 +36,13 @@ export default function MyTrip({ trips }) {
   
       return (
    
-        <div className="flex-column justify-center w-3/4">
+        <div className="flex justify-center">
     {trips && trips.map((trip) => (
        <div key={trip._id} className="">
        <div className="container p-8 "id="cards">
-   <div className="flex justify-center flex-row flex-wrap h-1/2" >       
+   <div className="flex justify-center flex-row flex-wrap " >       
      <div className="" >
-       <div className="relative bg-white rounded border ">
+       <div className="relative bg-white rounded border">
          <picture className="block bg-gray-200 border-b">
            <img className="block" 
           //  src="https://picsum.photos/id/29/2106/1404" 
@@ -75,8 +72,7 @@ export default function MyTrip({ trips }) {
         <Activities />
       </div>
       <div className="">
-        <CommentList 
-        comments={trip.comments}/>
+        <CommentList comments={trip.comments} />
       </div>
        </div>
      </div>

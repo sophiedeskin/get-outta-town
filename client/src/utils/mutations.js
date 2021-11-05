@@ -26,7 +26,6 @@ export const ADD_USER = gql`
 
 export const ADD_TRIP = gql`
   mutation addTrip(
-    $tripTitle: String!
     $tripCountry: String!
     $tripCity: String!
     $tripDesc: String!
@@ -34,7 +33,6 @@ export const ADD_TRIP = gql`
     $tripImg: String!
   ) {
     addTrip(
-      tripTitle: $tripTitle
       tripCountry: $tripCountry
       tripCity: $tripCity
       tripDesc: $tripDesc
@@ -42,88 +40,60 @@ export const ADD_TRIP = gql`
       tripImg: $tripImg
     ) {
       _id
-      tripTitle
-      tripCity
       tripCountry
       tripDesc
       tripDuration
       tripImg
       createdAt
-      activities {
-        _id
-        activityTitle
-        activityLink
-        activityImg
-        activityReview
-      }
       comments {
         _id
         commentText
       }
-
     }
   }
 `;
 export const REMOVE_TRIP = gql`
 mutation removeTrip($tripId: ID!, $trip: String!) {
-  removeTrip( tripId: $tripId, trip: $trip ) {
+  removeTrip(trip: $trip) {
       _id
-      tripTitle
-      tripCountry
-      tripDesc
-      tripDuration
-      tripImg
-      createdAt
-      activities {
-        _id
-        activityTitle
-        activityLink
-        activityImg
-        activityReview
+      username
+      email
+      trips {
+        tripCountry
+        tripCity
+        tripDesc
+        tripDuration
+        createdAt
+        tripImg
       }
-      comments {
-        _id
-        commentText
-    }
   }
 }
 `;
 
 
 export const ADD_COMMENT = gql`
-mutation addComment($tripId: ID!, $commentText: String!) {
-  addComment(tripId: $tripId, commentText: $commentText) {
-    _id
-    tripCountry
-    tripDesc
-    tripDuration
-    tripImg
-    createdAt
-    comments {
+  mutation addComment(
+    $tripId: ID!
+    $commentText: String!
+    $commentAuthor: String!
+  ) {
+    addComment(
+      tripId: $tripId
+      commentText: $commentText
+      commentAuthor: $commentAuthor
+    ) {
       _id
-      commentText
+      tripCountry
+      tripCity
+      tripDesc
+      tripDuration
+      tripImg
       createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
     }
   }
-}
-`;
-
-export const ADD_ACTIVITY = gql`
-mutation addActivity($tripId: ID!, $activityTitle: String!, $activityLink: String!, $activityImg: String!, $activityReview: String!) {
-  addActivity(tripId: $tripId, activityTitle: $activityTitle, activityLink: $activityLink, activityImg: $activityImg, activityReview: $activityReview) {
-    _id
-    tripCountry
-    tripDesc
-    tripDuration
-    tripImg
-    createdAt
-    activities {
-      _id
-      activityTitle
-      activityLink
-      activityImg
-      activityReview
-    }
-  }
-}
 `;

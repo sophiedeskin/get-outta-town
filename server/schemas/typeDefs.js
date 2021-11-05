@@ -11,7 +11,6 @@ const typeDefs = gql`
 
   type Trip {
     _id: ID
-    tripTitle: String
     tripCountry: String
     tripCity: String
     tripDesc: String
@@ -19,21 +18,13 @@ const typeDefs = gql`
     tripImg: String
     createdAt: String
     comments: [Comment]
-    activities: [Activity]
     username: [User]!
-  }
-
-  type Activity {
-    _id: ID
-    activityTitle: String
-    activityLink: String
-    activityImg: String
-    activityReview: String
   }
 
   type Comment {
     _id: ID
     commentText: String
+    commentAuthor: String
     createdAt: String
   }
 
@@ -55,16 +46,14 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addTrip(
-      tripTitle: String!
       tripCountry: String!
       tripCity: String!
       tripDuration: String!
       tripDesc: String!
       tripImg: String!
     ): Trip
-    addComment(tripId: ID!, commentText: String!): Trip
-    addActivity(tripId: ID!, activityTitle: String!, activityLink: String!, activityImg: String!, activityReview: String!): Trip
-    removeTrip(tripId: ID!): Trip
+    addComment(tripId: ID!, commentText: String!, commentAuthor: String!): User
+    removeTrip(tripId: ID!): User
     removeComment(tripId: ID!, commentId: ID!): User
   }
 `;

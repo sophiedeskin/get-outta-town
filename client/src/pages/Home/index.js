@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import Trip from '../../components/Trip';
 import { Link } from 'react-router-dom';
+
 import { QUERY_TRIPS } from '../../utils/queries';
 
 import './home.css';

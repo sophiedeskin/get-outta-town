@@ -1,4 +1,4 @@
-#addtrip{
-position: relative;
-left: 600px
+.addtrip{
+    display: flex;
+    justify-content: center;
 }
