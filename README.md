@@ -4,7 +4,11 @@
 Get Outta Town is an application that will help users create and plan future trips. Users will be required to sign in to add/delete trips and will have the option to search for previously created trips for inspiration.
 
 # Technology Used
-
+* React
+* GraphQl
+* MongoDB/Mongoose
+* JWT
+* Tailwinds
 
 
 # Images
