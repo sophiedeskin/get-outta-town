@@ -39,7 +39,7 @@ export default function Trip({ trips }) {
          </p>
          <br/>
          <Link 
-         className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full"
+         className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full flex-wrap"
          type="submit"
          to={`/trips/${trip._id}`}
                    // class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"

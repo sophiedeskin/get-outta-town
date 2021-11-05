@@ -25,7 +25,7 @@ export default function MyTrip({ trips }) {
       const handleRemoveTrip = async (trip) => {
         try {
           const { data } = await removeTrip({
-            variables: { trip },
+            variables: { tripId: trip._id },
           });
         } catch (err) {
           console.error(err);
@@ -62,7 +62,7 @@ export default function MyTrip({ trips }) {
            </p>
            <br/>
            <button 
-                    class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full"
+                    class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full flex-wrap"
                     // disabled={!(userFormData.username && userFormData.email && userFormData.password)}
                     onClick={() => handleRemoveTrip(trip)}
                     // variant='success'
