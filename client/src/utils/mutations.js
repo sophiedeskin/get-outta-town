@@ -65,8 +65,8 @@ export const ADD_TRIP = gql`
   }
 `;
 export const REMOVE_TRIP = gql`
-mutation removeTrip($tripId: ID!, $trip: String!) {
-  removeTrip( tripId: $tripId, trip: $trip ) {
+mutation removeTrip($tripId: ID!) {
+  removeTrip( tripId: $tripId ) {
       _id
       tripTitle
       tripCountry

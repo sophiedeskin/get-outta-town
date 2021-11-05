@@ -115,7 +115,7 @@ const resolvers = {
     removeTrip: async (parent, { tripId }, context) => {
         // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
         if (context.user) {
-          const trip = await Trip.destroy({
+          const trip = await Trip.deleteOne({
             _id: tripId
           });
           await User.findOneAndUpdate(
