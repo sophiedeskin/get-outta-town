@@ -2,6 +2,13 @@ const { Schema, model } = require('mongoose');
 // const dateFormat = require('../utils/dateFormat');
 
 const tripSchema = new Schema({
+  tripTitle: {
+    type: String,
+    required: 'You need to leave a title!',
+    minlength: 1,
+    maxlength: 280,
+    trim: true,
+  },
   tripCountry: {
     type: String,
     required: 'You need to leave a country!',
@@ -42,6 +49,12 @@ const tripSchema = new Schema({
     default: Date.now,
     // get: (timestamp) => dateFormat(timestamp),
   },
+  users:
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  
   comments: [
     {
       commentText: {
@@ -50,9 +63,38 @@ const tripSchema = new Schema({
         minlength: 1,
         maxlength: 280,
       },
-      commentAuthor: {
+      createdAt: {
+        type: Date,
+        default: Date.now,
+        // get: (timestamp) => dateFormat(timestamp),
+      },
+    },
+  ],
+  activities: [
+    {
+      activityTitle: {
         type: String,
         required: true,
+        minlength: 1,
+        maxlength: 280,
+      },
+      activityLink: {
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 280,
+      },
+      activityImg: {
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 280,
+      },
+      activityReview: {
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 280,
       },
       createdAt: {
         type: Date,

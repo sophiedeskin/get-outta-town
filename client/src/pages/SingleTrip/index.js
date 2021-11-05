@@ -6,9 +6,9 @@ import { useQuery } from '@apollo/client';
 
 import CommentList from '../../components/CommentList';
 import CommentForm from '../../components/CommentForm';
+import Activities from '../../components/Activities';
 
 import { QUERY_SINGLE_TRIP } from '../../utils/queries';
-import { QUERY_ME } from '../../utils/queries';
 
 const SingleTrip = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
@@ -54,6 +54,9 @@ const SingleTrip = () => {
    </div>
                  
  </div>
+      <div className="">
+        <Activities />
+      </div>
       <div className="">
         <CommentForm tripId={trip._id} />
       </div>

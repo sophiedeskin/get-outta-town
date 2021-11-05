@@ -2,7 +2,9 @@ import React from 'react'
 import './trip.css';
 import { Link } from 'react-router-dom';
 
+
 export default function Trip({ trips }) {
+
   if (!trips.length) {
     return <h3 className="flex justify-center pt-6 text-lg">No Trips Yet</h3>;
   }
@@ -25,12 +27,15 @@ export default function Trip({ trips }) {
        <div className="p-4">
          <h3 className="text-lg font-bold">
            <a className="stretched-link" href="#" title="Card 1">
-           {trip.tripCountry}
+           {trip.tripTitle}
            </a>
          </h3>
          <time className="block mb-2 text-sm text-gray-600" datetime="2019-01-01">{trip.tripDuration}</time>
          <p>
-         {trip.tripDesc}
+         {trip.tripCountry}
+         </p>
+         <p>
+         {trip.tripCity}
          </p>
          <br/>
          <Link 
