@@ -8,7 +8,9 @@ import CommentList from '../../components/CommentList';
 import { useQuery } from '@apollo/client';
 
 export default function MyTrip({ trips }) {
-
+  if (!trips.length) {
+    return <h3 className="flex justify-center pt-6 text-lg">No Trips Yet</h3>;
+  }
 
     const [removeTrip, { error }] = useMutation(REMOVE_TRIP, {
         update(cache, { data: { removeTrip } }) {
@@ -32,10 +34,6 @@ export default function MyTrip({ trips }) {
           console.error(err);
         }
       };
-
-    if (!trips.length) {
-      return <h3 className="flex justify-center pt-6 text-lg">No Trips Yet</h3>;
-    }
   
       return (
    
