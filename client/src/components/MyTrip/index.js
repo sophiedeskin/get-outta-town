@@ -71,9 +71,6 @@ export default function MyTrip({ trips }) {
                     >
                     Delete Trip</button>
          </div>
-         <div className="">
-        <Activities />
-      </div>
       <div className="">
         <CommentList 
         comments={trip.comments}/>
