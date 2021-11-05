@@ -201,7 +201,7 @@ export default function AddTrip() {
             <button 
             className="w-auto bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full"
             type="submit"
-            // to={`/dashboard`}
+            to={`/dashboard`}
             >
               
               Create

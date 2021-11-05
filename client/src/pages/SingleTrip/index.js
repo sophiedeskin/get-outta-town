@@ -55,9 +55,6 @@ const SingleTrip = () => {
                  
  </div>
       <div className="">
-        <Activities />
-      </div>
-      <div className="">
         <CommentForm tripId={trip._id} />
       </div>
       <div className="">

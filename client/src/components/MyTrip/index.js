@@ -39,7 +39,7 @@ export default function MyTrip({ trips }) {
   
       return (
    
-        <div className="flex-column justify-center w-3/4">
+        <div className="flex-column justify-center">
     {trips && trips.map((trip) => (
        <div key={trip._id} className="">
        <div className="container p-8 "id="cards">
@@ -54,9 +54,9 @@ export default function MyTrip({ trips }) {
          </picture>
          <div className="p-4">
            <h3 className="text-lg font-bold">
-             <a className="stretched-link" href="#" title="Card 1">
+             <p className="stretched-link" title="Card 1">
              {trip.tripCountry}
-             </a>
+             </p>
            </h3>
            <time className="block mb-2 text-sm text-gray-600" datetime="2019-01-01">{trip.tripDuration}</time>
            <p>
@@ -71,9 +71,6 @@ export default function MyTrip({ trips }) {
                     >
                     Delete Trip</button>
          </div>
-         <div className="">
-        <Activities />
-      </div>
       <div className="">
         <CommentList 
         comments={trip.comments}/>
