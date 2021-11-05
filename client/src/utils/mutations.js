@@ -67,10 +67,6 @@ export const ADD_TRIP = gql`
 export const REMOVE_TRIP = gql`
 mutation removeTrip($tripId: ID!, $trip: String!) {
   removeTrip( tripId: $tripId, trip: $trip ) {
-    _id
-    username
-    email
-    trips {
       _id
       tripTitle
       tripCountry
@@ -89,7 +85,6 @@ mutation removeTrip($tripId: ID!, $trip: String!) {
         _id
         commentText
     }
-  }
   }
 }
 `;

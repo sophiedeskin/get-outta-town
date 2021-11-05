@@ -64,7 +64,7 @@ const typeDefs = gql`
     ): Trip
     addComment(tripId: ID!, commentText: String!): Trip
     addActivity(tripId: ID!, activityTitle: String!, activityLink: String!, activityImg: String!, activityReview: String!): Trip
-    removeTrip(tripId: ID!): User
+    removeTrip(tripId: ID!): Trip
     removeComment(tripId: ID!, commentId: ID!): User
   }
 `;
