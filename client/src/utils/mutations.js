@@ -43,6 +43,7 @@ export const ADD_TRIP = gql`
     ) {
       _id
       tripTitle
+      tripCity
       tripCountry
       tripDesc
       tripDuration

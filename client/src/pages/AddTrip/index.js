@@ -28,6 +28,7 @@ export default function AddTrip() {
       try {
         const { trips } = cache.readQuery({ query: QUERY_TRIPS });
 
+
         cache.writeQuery({
           query: QUERY_TRIPS,
           data: { trips: [addTrip, ...trips] },

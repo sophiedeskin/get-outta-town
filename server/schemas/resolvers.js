@@ -36,6 +36,7 @@ const resolvers = {
       return { token, user };
     },
     login: async (parent, { email, password }) => {
+      console.log("hello")
       const user = await User.findOne({ email });
 
       if (!user) {
@@ -56,7 +57,8 @@ const resolvers = {
       parent,
       { userID, tripTitle, tripCountry, tripCity, tripDuration, tripDesc, tripImg },
       context
-    ) => {
+      ) => {
+      
       // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
       if (context.user) {
         const trip = await Trip.create({
@@ -67,11 +69,12 @@ const resolvers = {
           tripDesc: tripDesc,
           tripImg: tripImg,
         });
+        console.log(trip)
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { trips: trip._id } }
-        );
-
+          );
+          
         return trip;
       }
       throw new AuthenticationError("You need to be logged in!");
