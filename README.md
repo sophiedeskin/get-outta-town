@@ -20,3 +20,4 @@ Get Outta Town is an application that will help users create and plan future tri
 
 
 # Contact
+For any questions or concerns regarding the project, reach out to sophiedeskin@gmail.com, gisellesmeborbolla@gmail.com, or keith.whittman@gmail.com
