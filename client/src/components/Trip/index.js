@@ -14,7 +14,7 @@ export default function Trip({ trips }) {
       <div className="flex justify-center grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
   {trips && trips.map((trip) => (
      <div key={trip._id} className="">
-     <div className="container mx-auto p-8 "id="cards">
+     <div className="container mx-auto p-8 w-1/4 h-1/4 "id="cards">
  <div className="flex justify-center flex-row flex-wrap " >       
    <div className="sm:w-1/2 md:w-1/3 mb-4 px-2" >
      <div className="relative bg-white rounded border">
