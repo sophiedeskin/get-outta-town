@@ -9,6 +9,7 @@ function MyTrips() {
   const { data } = useQuery(QUERY_USER);
   const trips = data?.user.trips || [];
   console.log(data);
+  
 
   return (
     <div className="">

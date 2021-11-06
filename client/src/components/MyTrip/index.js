@@ -17,6 +17,7 @@ export default function MyTrip({ trips }) {
     } catch (err) {
       console.error(err);
     }
+    window.location.reload();
   };
 
   if (!trips.length) {
