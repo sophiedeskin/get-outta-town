@@ -7,10 +7,11 @@ import { useQuery } from "@apollo/client";
 import CommentList from "../../components/CommentList";
 import CommentForm from "../../components/CommentForm";
 import Activities from "../../components/Activities";
-
+import { QUERY_USER } from "../../utils/queries";
 import { QUERY_SINGLE_TRIP } from "../../utils/queries";
 
 const SingleTrip = () => {
+
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { tripId } = useParams();
 
@@ -20,7 +21,7 @@ const SingleTrip = () => {
   });
 
   const trip = data?.trip || {};
-
+console.log(trip)
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -38,15 +39,16 @@ const SingleTrip = () => {
                 </picture>
                 <div className="p-4">
                   <h3 className="text-lg font-bold">
-                    <a className="stretched-link" href="#" title="Card 1">
+                    <p className="stretched-link" title="Card 1">
                       {trip.tripCountry}
-                    </a>
+                    </p>
                   </h3>
                   <div className="block mb-2 text-sm text-gray-600">
                     {trip.tripDuration}
                   </div>
                   <p>{trip.tripDesc}</p>
                   <br />
+                  <p></p>
                 </div>
               </div>
             </div>

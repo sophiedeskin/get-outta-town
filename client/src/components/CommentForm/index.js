@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
+import "./commentform.css";
 import { ADD_COMMENT } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
@@ -78,9 +78,10 @@ type="submit"
 </section>
 </>
       ) : (
-        <p>
-          You need to be logged in to share your thoughts. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        <p className="commentform">
+          You need to be logged in to share your thoughts. Please 
+          
+          login or signup.
         </p>
       )}
     </div>

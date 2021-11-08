@@ -56,7 +56,7 @@ function Contact() {
     <div className="flex flex-wrap mb-15 w-1/2 justify-center" >
       <div className="w-full px-3 ">
               <br/>
-        <label className="block mb-2 text-sm text-black" for="grid-password">
+        <label className="block mb-2 text-sm text-white" for="grid-password">
           Name
         </label>
         <input className="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12 resize-none" id="nick" 
@@ -68,7 +68,7 @@ function Contact() {
     </div>
     <div className="flex flex-wrap mb-6 w-1/2">
       <div className="w-full px-3">
-        <label htmlFor="email" className="block mb-2 text-sm text-black" for="grid-password">
+        <label htmlFor="email" className="block mb-2 text-sm text-white" for="grid-password">
           E-mail
         </label>
         <input className="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12 resize-none"             
@@ -81,7 +81,7 @@ function Contact() {
     </div>
     <div className="flex flex-wrap mb-6 w-1/2 justify-center">
       <div className="w-full px-3">
-        <label className="block mb-2 text-sm text-black" for="grid-password">
+        <label className="block mb-2 text-sm text-white" for="grid-password">
           Message
         </label>
         <textarea className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"             
@@ -92,7 +92,7 @@ function Contact() {
               </textarea>
       </div>
     </div>
-          <button className ="text-pink-600 bg-pink-300 shadow-lg font-normal h-10 w-10 rounded-full outline-none focus:outline-none mb-2" type="button"  type="submit">
+          <button className ="text-blue-600 bg-blue-300 shadow-lg font-normal h-10 w-10 rounded-full outline-none focus:outline-none mb-2" type="button"  type="submit">
              <i className="far fa-paper-plane"></i>
               </button>
   </form>  

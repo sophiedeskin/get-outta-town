@@ -8,7 +8,7 @@ const CommentList = ({ comments = [] }) => {
   const user = data?.user || [];
   console.log(user)
   if (!comments.length) {
-    return <h3 class="flex justify-center text-lg">No Comments Yet</h3>;
+    return <h3 class="text-white flex justify-center text-lg">No Comments Yet</h3>;
   }
 
     return (

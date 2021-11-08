@@ -13,7 +13,7 @@ function MyTrips() {
 
   return (
     <div className="">
-      <button className="flex justify-center pt-6" id="addtrip">
+      <button className="flex items-center pt-6" id="addtrip">
         <Link
           className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2  border rounded-full"
           type="submit"
@@ -23,6 +23,8 @@ function MyTrips() {
           Add a Trip
         </Link>
       </button>
+      <br/>
+      <br/>
       <div className="flex justify-center pt-6">
         <div className="">
           <MyTrip trips={trips} />

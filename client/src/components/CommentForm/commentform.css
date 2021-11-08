@@ -2,3 +2,9 @@
     display:flex;
     justify-content: center;
 }
+.commentform{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    color: white;
+}
