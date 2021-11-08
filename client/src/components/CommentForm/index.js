@@ -44,7 +44,7 @@ const CommentForm = ({ tripId }) => {
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`flex justify-center text-lg ${
+            className={`flex justify-center text-white text-lg ${
               characterCount === 280 || error ? 'text-danger' : ''
             }`}
           >
